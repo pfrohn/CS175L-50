@@ -4,36 +4,45 @@ Name: Pat Frohn
 Restaurants Program
 '''
 
-vegetarian = False
-vegan = False
-gluten_free = False
+loop = True
 
-vegetarian_response = input('Is anyone in your party a vegetarian? ')
-vegan_response = input('Is anyone in your party a vegan? ')
-gluten_response = input('Is anyone in your party gluten free? ')
-
-if vegetarian_response == 'yes':
-    vegetarian = True
+while loop:
 
 
-if vegan_response == 'yes':
-    vegan = True
+    vegetarian = False
+    vegan = False
+    gluten_free = False
 
-if gluten_response == 'yes':
-    gluten_free = True
+    vegetarian_response = input('Is anyone in your party a vegetarian? ')
+    vegan_response = input('Is anyone in your party a vegan? ')
+    gluten_response = input('Is anyone in your party gluten free? ')
 
-print('Here are your restaurant choices: ')
+    if vegetarian_response == 'yes':
+        vegetarian = True
 
-if not vegetarian and  not vegan and not gluten_free:
-    print('Joe\'s Gourmet Burgers')
+
+    if vegan_response == 'yes':
+        vegan = True
+
+    if gluten_response == 'yes':
+        gluten_free = True
+
+    print('Here are your restaurant choices: ')
+
+    if not vegetarian and  not vegan and not gluten_free:
+        print('Joe\'s Gourmet Burgers')
     
 
-if not vegan and  not gluten_free:
-    print('Mama\'s Fine Italian')
+    if not vegan and  not gluten_free:
+        print('Mama\'s Fine Italian')
 
 
-if not vegan:
-    print('Main Street Pizza')
+    if not vegan:
+        print('Main Street Pizza')
 
-print('Corner Cafe')
-print('Chef\'s Kitchen')
+    print('Corner Cafe')
+    print('Chef\'s Kitchen')
+    question = str(input('Would you like to try again? '))
+    if question == 'no' or question == 'No':
+        loop = False
+        print('Goodbye!')
